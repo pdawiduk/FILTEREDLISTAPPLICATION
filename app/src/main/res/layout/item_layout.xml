@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+        <data>
+            <variable
+                    name="record"
+                    type="com.example.roomapplicationwithrecyclerview.database.RecordEntity"/>
+        </data>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginLeft="@dimen/horizontal_dimen"
+        android:layout_marginRight="@dimen/horizontal_dimen"
+        >
+
+    <TextView android:id="@+id/tvName"
+              android:layout_width="@dimen/name_width"
+              android:layout_height="match_parent"
+              app:layout_constraintTop_toTopOf="parent"
+              app:layout_constraintBottom_toBottomOf="parent"
+              app:layout_constraintLeft_toLeftOf="parent"
+              android:text="@{record.name}"
+    />
+
+    <TextView android:id="@+id/tvDate"
+              android:layout_width="@dimen/date_width"
+              android:layout_height="match_parent"
+              app:layout_constraintTop_toTopOf="parent"
+              app:layout_constraintBottom_toBottomOf="parent"
+              app:layout_constraintLeft_toRightOf="@id/tvName"
+              android:text="@{record.date}"
+    />
+
+    <TextView android:id="@+id/tvHour"
+              android:layout_width="@dimen/hour_width"
+              android:layout_height="match_parent"
+              app:layout_constraintTop_toTopOf="parent"
+              app:layout_constraintBottom_toBottomOf="parent"
+              app:layout_constraintLeft_toRightOf="@id/tvDate"
+              android:text="@{record.hour}"
+    />
+
+    <TextView android:id="@+id/tvUser"
+              android:layout_width="@dimen/user_width"
+              android:layout_height="match_parent"
+              app:layout_constraintTop_toTopOf="parent"
+              app:layout_constraintBottom_toBottomOf="parent"
+              app:layout_constraintLeft_toRightOf="@id/tvHour"
+              android:text="@{record.user}"
+    />
+
+    <TextView android:id="@+id/tvLocal"
+              android:layout_width="@dimen/local_width"
+              android:layout_height="match_parent"
+              app:layout_constraintTop_toTopOf="parent"
+              app:layout_constraintBottom_toBottomOf="parent"
+              app:layout_constraintLeft_toRightOf="@id/tvUser"
+              android:text="@{record.local}"
+              android:layout_marginRight="@dimen/horizontal_dimen"
+    />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

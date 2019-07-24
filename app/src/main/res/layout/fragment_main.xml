@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+                name="viewModel"
+                type="com.example.roomapplicationwithrecyclerview.ColumnsViewModel"/>
+    </data>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="match_parent"
+                                                   tools:context=".MainFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/csButtonsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginLeft="@dimen/horizontal_dimen"
+            >
+
+        <TextView
+                android:id="@+id/btnNameFilter"
+                android:layout_width="@dimen/name_width"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@id/csButtonsContainer"
+                app:layout_constraintBottom_toBottomOf="@id/csButtonsContainer"
+                app:layout_constraintLeft_toLeftOf="@id/csButtonsContainer"
+                android:text="Nazwa"
+                android:background="@android:color/white"
+                android:onClick='@{() -> viewModel.stringClicked("NAME")}'
+
+
+        />
+
+        <TextView
+                android:id="@+id/btnDateFilter"
+                android:layout_width="@dimen/date_width"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@id/csButtonsContainer"
+                app:layout_constraintBottom_toBottomOf="@id/csButtonsContainer"
+                app:layout_constraintLeft_toRightOf="@id/btnNameFilter"
+                android:text="Data"
+                android:background="@android:color/white"
+                android:onClick='@{() -> viewModel.dateClicked()}'
+        />
+
+        <TextView
+                android:id="@+id/btnHourFilter"
+                android:layout_width="@dimen/hour_width"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@id/csButtonsContainer"
+                app:layout_constraintBottom_toBottomOf="@id/csButtonsContainer"
+                app:layout_constraintLeft_toRightOf="@id/btnDateFilter"
+                android:text="Godz."
+                android:background="@android:color/white"
+                android:onClick='@{() -> viewModel.hourCliked()}'
+        />
+
+        <TextView
+                android:id="@+id/btnUserFilter"
+                android:layout_width="@dimen/user_width"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@id/csButtonsContainer"
+                app:layout_constraintBottom_toBottomOf="@id/csButtonsContainer"
+                app:layout_constraintLeft_toRightOf="@id/btnHourFilter"
+                android:text="Użytkownik"
+                android:background="@android:color/white"
+                android:onClick='@{() -> viewModel.stringClicked("USER")}'
+        />
+
+        <TextView
+                android:id="@+id/btnLocalFilter"
+                android:layout_width="@dimen/local_width"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@id/csButtonsContainer"
+                app:layout_constraintBottom_toBottomOf="@id/csButtonsContainer"
+                app:layout_constraintRight_toRightOf="@id/csButtonsContainer"
+                android:text="Lokal"
+                android:background="@android:color/white"
+                android:onClick='@{() -> viewModel.stringClicked("LOCAL")}'
+        />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+<androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvRecords"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/csButtonsContainer"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+
+        >
+
+</androidx.recyclerview.widget.RecyclerView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

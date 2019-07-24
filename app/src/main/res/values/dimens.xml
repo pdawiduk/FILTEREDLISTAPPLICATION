@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="name_width">80dp</dimen>
+    <dimen name="date_width">65dp</dimen>
+    <dimen name="hour_width">85dp</dimen>
+    <dimen name="user_width">120dp</dimen>
+    <dimen name="local_width">60dp</dimen>
+    <dimen name="horizontal_dimen">8dp</dimen>
+</resources>
